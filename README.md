@@ -10,7 +10,12 @@ wsl --install
 
 - Abra a Microsoft Store e instale a distro do ubuntu
 
+![Screenshot](ubuntu-distro.png)
+
 - Quando iniciar a distro será pedido um usuario/senha que sera usado para permissoes de adm
+
+![Screenshot](ubuntu-user.png)
+
 
 # **Limitar Uso de Hardware do WSL2**
 
