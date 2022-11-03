@@ -26,3 +26,67 @@ swap=2GB
 ```
 wsl --shutdown
 ```
+
+# **Integrar WSL2 Com Docker**
+
+- Instalar requisitos
+```bash
+sudo apt update && sudo apt upgrade
+```
+
+```bash
+sudo apt remove docker docker-engine docker.io containerd runc
+```
+
+```bash
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+```
+
+- Setar repo do Docker
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+```
+
+```bash
+echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+- Docker Engine
+
+```bash
+sudo apt-get update
+```
+
+```bash
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+```
+
+```bash
+sudo usermod -aG docker $USER
+```
+
+# **Iniciar Docker**
+
+- Reinicie o Ubuntu e digite o comando
+
+```bash
+sudo service docker start
+```
+
+esse comando sempre deverá ser usado para inicair o serviço, será pedido sua senha setada ao instalar a distro
+
+- Para pausar o servico rode
+```
+sudo service docker stop
+```
+
+# **Referencias**
+
+[Micrsoft Docs](https://learn.microsoft.com/pt-br/windows/wsl/install)
